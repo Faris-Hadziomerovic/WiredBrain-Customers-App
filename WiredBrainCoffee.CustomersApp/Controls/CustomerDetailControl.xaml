@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="WiredBrainCoffee.CustomersApp.Controls.CustomerDetailControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WiredBrainCoffee.CustomersApp.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="root">
+        
+    <!--Customer details-->
+    
+    <StackPanel>
+        <TextBox Header="Firstname" 
+                 Text="{Binding ElementName=root, 
+                        Path=Customer.FirstName, 
+                        Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Header="Lastname"  
+                 Text="{Binding ElementName=root, 
+                        Path=Customer.LastName, 
+                        Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Content="Is developer" Margin="10" 
+                  IsChecked="{Binding ElementName=root, 
+                        Path=Customer.IsDeveloper, 
+                        Mode=TwoWay}"/>
+    </StackPanel>
+    
+</UserControl>
+
+    
+    <!--before twoway binding-->
+    
+<!--<StackPanel>
+    <TextBox Header="Firstname" Margin="10" x:Name="txtFirstName" 
+                     TextChanged="txtFirstName_TextChanged"/>
+    <TextBox Header="Lastname" Margin="10" x:Name="txtLastName"
+                     TextChanged="txtLastName_TextChanged"/>
+    <CheckBox Content="Is developer" Margin="10" x:Name="cboxIsDev" 
+                      Checked="cboxIsDev_Changed"
+                      Unchecked="cboxIsDev_Changed"/>
+</StackPanel>-->
